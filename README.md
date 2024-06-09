@@ -13,6 +13,6 @@
 
 2. Edit .env file -> set local DB settings
 
-3. Navigate to your theme directory (wp-content/themes/Geomatrix) and then run:
+3. Navigate to your theme directory (wp-content/themes/geomatrix) and then run:
   - `npm install`
   - `gulp `
