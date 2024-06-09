@@ -1,0 +1,225 @@
+@use "../../../styles/variables" as *;
+
+/* To enable slick desktop styles, add slick-desktop to my-slick */
+/* To enable styles to complement loading with a promise, add promise-load */
+.my-slick {
+  display: flex;
+  position: relative;
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+
+  &:not(.slick-desktop) {
+    @include b-991-up {
+      padding-right: 0;
+      padding-left: 0;
+      visibility: visible;
+    }
+
+    &:after {
+      @include b-991-up {
+        content: none;
+      }
+    }
+  }
+
+  &.slick-desktop {
+    &.slick-initialized {
+      @include b-991-up {
+        visibility: visible;
+        padding-right: 2rem;
+        padding-left: 2rem;
+      }
+
+      &:after {
+        @include b-991-up {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &.unslick-lg {
+    position: relative;
+    visibility: visible;
+
+    &:after {
+      content: none;
+      visibility: hidden;
+    }
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &.promise-load {
+    visibility: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      visibility: visible;
+      background-image: url(ajax-loader.gif);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &.loaded {
+      visibility: visible;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+
+  &.slick-dotted {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+  }
+
+  &.slick-arrows {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: visible;
+    background-image: url(ajax-loader.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  & > * {
+    flex: 1 0 100%;
+    position: absolute;
+
+    &:first-child {
+      position: static;
+    }
+
+    @include b-991-up {
+      flex: unset;
+      position: static;
+    }
+  }
+
+  & > button {
+    box-shadow: none;
+  }
+
+  &.slick-initialized {
+    display: grid;
+    visibility: visible;
+
+    &:after {
+      content: none;
+    }
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  .slick-track {
+    display: flex !important;
+
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+      height: inherit !important;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    height: 30px;
+    width: 16px;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(left-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: opacity 0.3s ease;
+
+      html[dir="rtl"] & {
+        left: unset;
+        right: 0;
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+
+    html[dir="rtl"] & {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    html[dir="rtl"] & {
+      right: unset;
+      left: 0;
+    }
+
+    &:before {
+      transform: scaleX(-1);
+
+      html[dir="rtl"] & {
+        transform: none;
+      }
+    }
+  }
+
+  .slick-dots {
+    padding: 0;
+    bottom: 0;
+
+    li {
+      width: 25px;
+      height: 15px;
+
+      button {
+        width: 25px;
+        height: 15px;
+        padding: 0;
+
+        &:before {
+          content: "";
+          width: 25px;
+          height: 2px;
+          background-color: #707070;
+          transition: all 0.3s ease;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "../variables" as *;
+
+/**********
+** Fonts **
+***********/
+@include font-face('Inter', '../fonts/inter-100', 100, 'normal', 'woff');
+@include font-face('Inter', '../fonts/inter-300', 300, 'normal', 'woff');
+@include font-face('Inter', '../fonts/inter-400', 400, 'normal', 'woff');
+@include font-face('Inter', '../fonts/inter-500', 500, 'normal', 'woff');
+@include font-face('Inter', '../fonts/inter-700', 700, 'normal', 'woff');
+// @include font-face('Dongle', '../fonts/dongle-bold', 700, 'bold', 'ttf');
+// @include font-face('Dongle', '../fonts/dongle-light', 300, 'light', 'ttf');
+// @include font-face('Dongle', '../fonts/dongle-regular', 500, 'regular', 'ttf');

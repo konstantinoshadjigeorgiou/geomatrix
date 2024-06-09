@@ -1,0 +1,27 @@
+@use "../variables" as *;
+
+#intro {
+  .intro {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+    height: 400px;
+
+    &__media {
+      min-width: 100%;
+
+      @include b-600-up {
+        min-width: 70vw;
+      }
+
+      @include b-991-up {
+        min-width: 60vw;
+      }
+    }
+
+    &__text {
+      @include responsive-fontsizes(20px, 2.5);
+    }
+  }
+}

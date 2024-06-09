@@ -1,0 +1,113 @@
+@use "../variables" as *;
+
+/*****************************
+  All colors are in HSL format
+  usage:
+    hsl( var(--white) )
+  with alpha:
+    hsl( var(--white) / 20% )
+******************************/
+:root {
+  // Brand colors
+  --brand-main-color: white;
+  --brand-background: white;
+
+  // body
+  --body-color: 324 5.49% 17.84%; // #302b2e
+
+  --white: 0 0% 100%; // #fff
+  --black: 0 0% 0%; // #000
+
+  --black-alpha-0: 0 0% 0% / 0;
+  --black-alpha-1: 0 0% 0% / 0.1;
+  --black-alpha-2: 0 0% 0% / 0.2;
+  --black-alpha-5: 0 0% 0% / 0.5;
+
+  --gray-1: 0 0% 91%;
+  --gray-2: 0 0% 76.9%;
+  --gray-3: 0 0% 65.5%;
+  --gray-4: 0 0% 55.7%;
+  --gray-5: 0 0% 43.9%;
+
+  // accessibility
+  --accessibility-focus-background-color: 0 0% 94.5%;
+  --accessibility-focus-color: 198.7 64.9% 36.9%;
+
+  // buttons
+  --primary-btn-color: var(--brand-main-color);
+  --secondary-btn-color: var(--brand-secondary-color);
+  --tertiary-btn-color: var(--brand-tertiary-color);
+
+  --category-background: 226.8 100% 50%;
+
+  --right-sidebar-divider-color: 357.7 84.6% 51.8%;
+
+  --table-border: 0 0% 94.1%;
+
+  // Admin Bar height
+  --bar-height: 0px;
+
+  // Navbar padding
+  --nav-padding: 0px;
+
+  @include b-600-up {
+    // --nav-padding: 117px;
+  }
+
+  @include b-991-up {
+    // --nav-padding: 86px;
+  }
+
+  @include b-1199-up {
+    // --nav-padding: 92px;
+  }
+
+  // Navbar height
+  --nav-height: 117px;
+
+  @include b-991-up {
+    // --nav-height: 86px;
+  }
+
+  @include b-1199-up {
+    // --nav-height: 92px;
+  }
+
+  // Container width
+  --container-width: 100%;
+
+  @include b-600-up {
+    --container-width: 540px;
+  }
+
+  @include b-767-up {
+    --container-width: 720px;
+  }
+
+  @include b-991-up {
+    --container-width: 940px;
+  }
+
+  @include b-1199-up {
+    --container-width: 1140px;
+  }
+
+  // Section padding block
+  --section-padding-block: 2rem;
+
+  @include b-767-up {
+    --section-padding-block: 4rem;
+  }
+
+  @include b-991-up {
+    --section-padding-block: 6rem;
+  }
+}
+
+.admin-bar {
+  --bar-height: 46px;
+
+  @include b-782-up {
+    --bar-height: 32px;
+  }
+}

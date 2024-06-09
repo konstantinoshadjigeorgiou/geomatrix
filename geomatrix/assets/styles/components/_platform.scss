@@ -1,0 +1,126 @@
+@use "../variables" as *;
+
+.post-type-archive-platform,
+.platform {
+  display: grid;
+  section.platform {
+    background-color: #f9fafb;
+    text-align: center;
+    padding-block: 8rem 3rem;
+
+    @include b-991-up {
+      padding-block: 8rem 6.5rem;
+    }
+    header {
+      display: grid;
+      gap: 1.5rem;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      max-width: 768px;
+    }
+  }
+  .entry-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .platforms {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    @include b-767 {
+      margin-top: 20px;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 200px;
+    }
+    .platform__item {
+      min-width: 180px;
+      a {
+        display: flex;
+        align-items: center;
+        border: 1px solid #d0d5dd;
+        box-shadow: 0px 1px 2px 0px #1018280d;
+        padding: 16px 28px 16px 28px;
+        gap: 8px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+        justify-content: center;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    span{
+      margin-left: 10px;
+    }
+  }
+
+  .entry-excerpt {
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 400px;
+    line-height: 24px;
+    padding-bottom: 10px;
+  }
+  .cards-section.accounts
+    .cards-component
+    .cards-component-inner
+    .cards-wrapper
+    .cards {
+    grid-template-columns: none;
+    gap: 4rem;
+    max-width: 830px;
+    margin: 0 auto;
+    display: grid;
+    @include b-991 {
+      gap: 2rem;
+    }
+    @include b-767 {
+      margin-top: 10px;
+    }
+    .card {
+      border-radius: 0;
+      border: none;
+      border-top: 2px solid #e2b205;
+      .card-inner {
+        gap: 0;
+        grid-template-columns: 1.1fr 1fr;
+        margin: 0;
+        padding: 0;
+        @include b-991 {
+          padding: 0;
+          grid-template-columns: none;
+        }
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+        header {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding-bottom: 2rem;
+          gap: 0;
+          padding: 30px 0 30px 30px;
+          @include b-991 {
+            padding: 30px;
+            align-items: center;
+            text-align: center;
+          }
+          @include b-575 {
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}

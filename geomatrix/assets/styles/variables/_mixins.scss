@@ -1,0 +1,191 @@
+@use "screens" as *;
+@use 'sass:math';
+/**
+ * Enable if you get division error
+ */
+// @use 'sass:math';
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    // @return str-slice($string, 1, $index - 1) + $replace +
+    //   str-replace(
+    //     str-slice($string, $index + str-length($search)),
+    //     $search,
+    //     $replace
+    //   );
+    @return str-slice($string, 1, $index - 1) + $replace
+      (
+        +
+          str-replace(
+            str-slice($string, $index + str-length($search)),
+            $search,
+            $replace
+          )
+      );
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg
+) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_"),
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype",
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + "." + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// ==========================================================================
+// Override functions
+// ==========================================================================
+@function hsl($color) {
+  @return unquote("hsl(#{$color})");
+}
+
+@function rgb($color) {
+  @return unquote("rgb(#{$color})");
+}
+
+/**
+ * Strips units from value
+ */
+@function strip-units($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+/**
+ * Converts px to rem
+ */
+@function toRem($value) {
+  @return calc(strip-units($value) / 16) * 1rem;
+}
+
+/**
+ * Converts rem to px
+ */
+@function toPx($value) {
+  $x: strip-units($value);
+  $x: $x * 16;
+  $x: $x * 1px;
+  @return $x;
+}
+
+/**
+* Responsive font sizes
+*
+* Increase the font size on different breakpoints
+*/
+@mixin responsive-fontsizes($base: 16px, $inc: 2) {
+  $rem: str-index(unquote("#{$base}"), "rem");
+
+  @if $rem {
+    $base: toPx($base);
+  }
+
+  font-size: toRem($base);
+
+  @include b-575-up {
+    font-size: toRem($base + ($inc * 1));
+  }
+
+  @include b-767-up {
+    font-size: toRem($base + ($inc * 2));
+  }
+
+  @include b-991-up {
+    font-size: toRem($base + ($inc * 3));
+  }
+
+  @include b-1199-up {
+    font-size: toRem($base + ($inc * 4));
+  }
+}
+
+/**
+ * Scaling padding for section
+ */
+@mixin section-padding($base, $inc) {
+  padding-top: $base;
+  padding-bottom: $base;
+
+  @include b-767-up {
+    padding-top: ($base + ($inc * 1));
+    padding-bottom: ($base + ($inc * 1));
+  }
+
+  @include b-991-up {
+    padding-top: ($base + ($inc * 2));
+    padding-bottom: ($base + ($inc * 2));
+  }
+}
+
+@mixin section-padding-top($base, $inc) {
+  padding-top: $base;
+
+  @include b-767-up {
+    padding-top: ($base + ($inc * 1));
+  }
+
+  @include b-991-up {
+    padding-top: ($base + ($inc * 2));
+  }
+}
+
+@mixin section-padding-bottom($base, $inc) {
+  padding-bottom: $base;
+
+  @include b-767-up {
+    padding-bottom: ($base + ($inc * 1));
+  }
+
+  @include b-991-up {
+    padding-bottom: ($base + ($inc * 2));
+  }
+}

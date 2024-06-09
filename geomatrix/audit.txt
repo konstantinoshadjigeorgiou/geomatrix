@@ -1,0 +1,36 @@
+# npm audit report
+
+glob-parent  <5.1.2
+Severity: high
+glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex - https://github.com/advisories/GHSA-ww39-953v-wcq6
+fix available via `npm audit fix --force`
+Will install gulp@3.9.1, which is a breaking change
+node_modules/glob-stream/node_modules/glob-parent
+node_modules/glob-watcher/node_modules/glob-parent
+  chokidar  1.0.0-rc1 - 2.1.8
+  Depends on vulnerable versions of glob-parent
+  node_modules/glob-watcher/node_modules/chokidar
+    glob-watcher  >=3.0.0
+    Depends on vulnerable versions of chokidar
+    node_modules/glob-watcher
+  glob-stream  5.3.0 - 6.1.0
+  Depends on vulnerable versions of glob-parent
+  node_modules/glob-stream
+    vinyl-fs  >=2.4.2
+    Depends on vulnerable versions of glob-stream
+    node_modules/vinyl-fs
+      gulp  >=4.0.0
+      Depends on vulnerable versions of glob-watcher
+      Depends on vulnerable versions of vinyl-fs
+      node_modules/gulp
+        gulp-autoprefixer  >=7.0.0
+        Depends on vulnerable versions of gulp
+        node_modules/gulp-autoprefixer
+
+7 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
