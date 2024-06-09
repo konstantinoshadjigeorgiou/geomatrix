@@ -16,7 +16,8 @@ Theme\custom_get_header();
         <div class="hero__hero">
           <div class="hero__inner">
             <div class="hero__media">
-              <img src="wp-content/uploads/2024/06/hero.png" alt="" />
+              <img src="<?= get_stylesheet_directory_uri(); ?>/dist/images/hero/hero.png" alt="hero">
+
             </div>
             <div class="hero__text">
               <h1>Discover the Power of Our Forex Platform</h1>
@@ -47,7 +48,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/analytics.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/analytics.png" alt="" />
                     <h3 class='title'> Real-time Analytics </h3>
                   </header>
 
@@ -66,7 +67,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/heart.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/heart.png" alt="" />
                     <h3 class='title'> Low Spreads </h3>
                   </header>
 
@@ -85,7 +86,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/support.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/support.png" alt="" />
                     <h3 class='title'> 24/7 Support </h3>
                   </header>
 
@@ -104,7 +105,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/lowcomission.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/lowcomission.png" alt="" />
                     <h3 class='title'> Low Commissions </h3>
                   </header>
 
@@ -123,7 +124,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/execution.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/execution.png" alt="" />
                     <h3 class='title'> Fast Execution </h3>
                   </header>
 
@@ -142,7 +143,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/execution2.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/execution2.png" alt="" />
                     <h3 class='title'> Fast Execution </h3>
                   </header>
 
@@ -190,7 +191,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/execution2.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/execution2.png" alt="" />
                     <h3 class="title"> STANDARD </h3>
                     <p> Account </p>
                   </header>
@@ -217,7 +218,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/execution2.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/execution2.png" alt="" />
                     <h3 class="title"> PRO </h3>
                     <p> Account </p>
                   </header>
@@ -244,7 +245,7 @@ Theme\custom_get_header();
               <article class="card">
                 <div class="card-inner center">
                   <header class="header">
-                    <img class="image" src="wp-content/uploads/2024/06/execution2.png" alt="" />
+                    <img class="image" src="<?= get_stylesheet_directory_uri(); ?>/dist/images/values/execution2.png" alt="" />
                     <h3 class="title"> VIP </h3>
                     <p> Account </p>
                   </header>
@@ -279,7 +280,7 @@ Theme\custom_get_header();
         <div class="hero__hero">
           <div class="hero__inner">
             <div class="hero__media">
-              <img src="wp-content/uploads/2024/06/mockup.png" alt="" />
+              <img src="<?= get_stylesheet_directory_uri(); ?>/dist/images/mockup.png" alt="" />
             </div>
             <div class="hero__text">
               <h2>Unlock Your Potential with Forex Trading</h2>
