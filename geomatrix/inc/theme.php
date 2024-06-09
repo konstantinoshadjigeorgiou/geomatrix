@@ -65,10 +65,6 @@ function register_global_assets()
 
   register_libraries("page-templates", $template);
 
-  /**
-   * Register all used custom fields assets
-   */
-  check_custom_fields_and_register(get_fields());
 }
 
 function register_asset($post_type, $name)
@@ -110,32 +106,6 @@ function register_libraries($type, $component_name)
   }
 }
 
-/**
- * Check which components are used and register their assets
- *
- * @param mixed $fields Array custom fields to check
- * @param array $libraries Array of libraries to register depending on their special keyword e.g. array('slick' => 'my-slick')
- */
-function check_custom_fields_and_register($fields)
-{
-  if (is_array($fields)) {
-    $all_fields = array_keys($fields);
-
-    foreach ($all_fields as $field) {
-      $component_name = str_replace("_", "-", $field);
-
-      /**
-       * Register any necessary libraries before registering component assets
-       */
-      register_libraries('template-parts/components', $component_name);
-
-      /**
-       * Register component assets
-       */
-      register_asset("components", $component_name);
-    }
-  }
-}
 
 
 /**
